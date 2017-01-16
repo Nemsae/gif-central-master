@@ -38,12 +38,12 @@ export default class SearchTable extends Component {
 
     return (
       <div>
-              {
-                results.map((gif, i) => (
-                  <div key={i}  className='col-xs-3 searchImageContainer'><img id={gif.id} onClick={() => this._getId(gif.id, gif.image)} className='searchImage' src={gif.image}/></div>
+        {
+          results.map((gif, i) => (
+            <div key={i}  className='col-xs-3 searchImageContainer'><img id={gif.id} onClick={() => this._getId(gif.id, gif.image)} className='searchImage' src={gif.image}/></div>
 
-                ))
-              }
+          ))
+        }
       </div>
     )
   }
