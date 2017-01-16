@@ -1,20 +1,25 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   debug: true,
   devtool: 'inline-source-map',
   entry: [
+    'webpack-hot-middleware/client?reload=true',
     'bootstrap-loader',
     './src/css/style.css',
     './src/index.js',
   ],
-  devServer: {
-    progress: true,
-    inline: true,
-    historyApiFallback: true,
-    port: 8000,
+  output: {
+    path: path.resolve('./public'),
+    publicPath: '/',
+    filename: 'bundle.js',
   },
-  output: { path: './build', publicPath: '/build/', filename: 'bundle.js' },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+  ],
   module: {
     loaders: [
       {
@@ -22,15 +27,16 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react']
-        }
+          presets: ['es2015', 'stage-2', 'react'],
+          plugins: ['react-html-attrs', 'transform-decorators-legacy'],
+        },
       },
       { test: /(\.css)$/, loaders: ['style', 'css'] },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
       { test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000' },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
-      { test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports?jQuery=jquery' },
-    ]
-  }
-}
+      { test: /bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports?jQuery=jquery' },
+    ],
+  },
+};
