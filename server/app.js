@@ -2,7 +2,7 @@ require('dotenv').config({ silent: true });
 // CONSTANTS
 
 const PORT = process.env.PORT || 8000;
-const MONGO_URI = process.env.MONGOLAB_URI || 'mongodb://localhost/myApp';
+const MONGO_URI = process.env.MONGOLAB_URI || 'mongodb://localhost/gifCentral';
 // REQUIRES
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -12,7 +12,6 @@ const path = require('path');
 // INITIALIZE SERVER
 const app = express();
 const server = require('http').createServer(app);
-
 
 // Use this for Mongo
 
