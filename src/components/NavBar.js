@@ -6,7 +6,7 @@ export default function NavBar() {
     <nav className="navbar navbar-inverse">
       <div className="navbarContainer">
         <div className="navbar-header">
-          <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbarContent">
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
