@@ -16,7 +16,7 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="nav navbar-nav navItemsContainer">
             <li className="linkItem"><Link className="link" to="/">Home</Link></li>
-            <li className="linkItem"><Link className="link" to="/">Search</Link></li>
+            <li className="linkItem"><Link className="link" to='/search'>Search</Link></li>
             <li className="linkItem"><Link className="link" to="/">Playground</Link></li>
             <li className="linkItem"><Link className="link" to="/">Screenshots</Link></li>
           </ul>
