@@ -17,8 +17,8 @@ export default function NavBar() {
           <ul className="nav navbar-nav navItemsContainer">
             <li className="linkItem"><Link className="link" to="/">Home</Link></li>
             <li className="linkItem"><Link className="link" to='/search'>Search</Link></li>
-            <li className="linkItem"><Link className="link" to="/">Playground</Link></li>
-            <li className="linkItem"><Link className="link" to="/">Screenshots</Link></li>
+            <li className="linkItem"><Link className="link" to="/playground">Playground</Link></li>
+            <li className="linkItem"><Link className="link" to="/screenshots">Screenshots</Link></li>
           </ul>
         </div>
       </div>
