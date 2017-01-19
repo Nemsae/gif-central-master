@@ -14,11 +14,12 @@ export default class SearchForm extends Component {
     this.submitForm = this.submitForm.bind(this);
   }
 
-  submitForm() {
-    console.log('hi');
+  submitForm(e) {
+    e.preventDefault();
+    this.props.fetchSearch(this.searchText.value);
   }
 
-  renderr() {
+  render() {
     return (
       <form onSubmit={this.submitForm}>
         <input type="text" ref={(input) => { this.searchText = input; }} />
@@ -27,3 +28,7 @@ export default class SearchForm extends Component {
     );
   }
 }
+
+SearchForm.propTypes = {
+  fetchSearch: React.PropTypes.func,
+};

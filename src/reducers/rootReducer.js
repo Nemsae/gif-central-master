@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import appReducer from './appReducer';
+import apiCalls from './apiCalls';
 
 export default combineReducers({
-  appReducer,
+  apiCalls,
 });
