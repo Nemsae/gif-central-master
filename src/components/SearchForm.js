@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { fetchSearch } from '../actions/ApiActions';
 
 @connect(null, dispatch => ({
-  fetchSearch(search) {
-    dispatch(fetchSearch(search));
+  fetchSearch(searchTerm) {
+    dispatch(fetchSearch(searchTerm));
   },
 }))
 
@@ -20,6 +20,7 @@ export default class SearchForm extends Component {
   }
 
   render() {
+    console.log('this.props:', this.props);
     return (
       <form onSubmit={this.submitForm}>
         <input type="text" ref={(input) => { this.searchText = input; }} />

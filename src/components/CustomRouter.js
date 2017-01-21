@@ -12,5 +12,5 @@ export default function CustomRouter() {
         <Route path='/search' component={SearchPage} />
       </Route>
     </Router>
-  )
+  );
 }
