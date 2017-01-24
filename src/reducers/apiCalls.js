@@ -3,8 +3,7 @@ export default function apiCalls(state = {}, action) {
 
   switch (type) {
     case 'FETCH_SEARCH_FULFILLED': {
-      console.log('payload:', payload);
-      return payload.data.data;
+      return payload.data;
     }
 
     default: return state;
