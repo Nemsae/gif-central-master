@@ -20,7 +20,6 @@ export default class SearchForm extends Component {
   }
 
   render() {
-    console.log('this.props:', this.props);
     return (
       <form onSubmit={this.submitForm}>
         <input type="text" ref={(input) => { this.searchText = input; }} />
