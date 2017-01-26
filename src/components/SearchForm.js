@@ -23,6 +23,8 @@ export default class SearchForm extends Component {
     return (
       <form onSubmit={this.submitForm}>
         <input type="text" ref={(input) => { this.searchText = input; }} />
+        <button value='2'>2</button>
+        <button value='5'>5</button>
         <button>Search</button>
       </form>
     );

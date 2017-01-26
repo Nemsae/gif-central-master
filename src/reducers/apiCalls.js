@@ -5,7 +5,6 @@ export default function apiCalls(state = {}, action) {
     case 'FETCH_SEARCH_FULFILLED': {
       return payload.data;
     }
-
     default: return state;
   }
 }
