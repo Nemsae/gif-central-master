@@ -36,7 +36,6 @@ export default class SearchForm extends Component {
 
   render() {
     const limit = this.state.resultLimit;
-    console.log('this.state.resultLimit:', this.state.resultLimit);
     return (
       <div>
         <form onSubmit={this.submitForm}>

@@ -1,4 +1,4 @@
-export default function apiCalls(state = {}, action) {
+export default function apiCalls(state = [], action) {
   const { type, payload } = action;
 
   switch (type) {
