@@ -8,8 +8,10 @@ import { connect } from 'react-redux';
 export default class PlaygroundPage extends Component {
   render() {
     return (
-      <div>
-        <img src={this.props.gifImage} alt="current gif background" />
+      <div id="gifBackgroundContainer">
+        <div className="gifBackgroundCard">
+          <img src={this.props.gifImage} alt="current gif background" />
+        </div>
       </div>
     );
   }
