@@ -15,10 +15,10 @@ const server = require('http').createServer(app);
 
 // Use this for Mongo
 
-// require('mongoose').connect(MONGO_URI, (err) => {
-//   if (err) throw err;
-//   console.log(`MongoDB connected to ${MONGO_URI}`);
-// });
+require('mongoose').connect(MONGO_URI, (err) => {
+  if (err) throw err;
+  console.log(`MongoDB connected to ${MONGO_URI}`);
+});
 
 server.listen(PORT, (err) => {
   console.log(err || `Express listening on port ${PORT}`);
