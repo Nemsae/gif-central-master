@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 @connect(state => ({
-  largeGif: this.state.gifImage,
+  gifImage: state.gifImage,
 }))
 
 export default class PlaygroundPage extends Component {
   render() {
     return (
       <div>
-        <h1>test</h1>
+        <img src={this.props.gifImage} alt="current gif background" />
       </div>
     );
   }
 }
+
+PlaygroundPage.propTypes = {
+  gifImage: React.PropTypes.string,
+};
