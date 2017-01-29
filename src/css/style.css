@@ -11,3 +11,8 @@ html, body {
 h3 {
   font-family: 'OpenSans', serif;
 }
+
+.selected {
+  background:red;
+  color:white;
+}

@@ -12,21 +12,44 @@ export default class SearchForm extends Component {
   constructor() {
     super();
     this.submitForm = this.submitForm.bind(this);
+    this.resultLimit = this.resultLimit.bind(this);
+
+    this.state = {
+      resultLimit: '25',
+    };
+  }
+
+  resultLimit(e) {
+    this.setState({
+      resultLimit: e.target.innerHTML,
+    });
   }
 
   submitForm(e) {
     e.preventDefault();
-    this.props.fetchSearch(this.searchText.value);
+    const searchPackage = {
+      searchTerm: this.searchText.value,
+      resultsLimit: this.state.resultLimit,
+    };
+    this.props.fetchSearch(searchPackage);
   }
 
   render() {
+    const limit = this.state.resultLimit;
+    console.log('this.state.resultLimit:', this.state.resultLimit);
     return (
-      <form onSubmit={this.submitForm}>
-        <input type="text" ref={(input) => { this.searchText = input; }} />
-        <button value='2'>2</button>
-        <button value='5'>5</button>
-        <button>Search</button>
-      </form>
+      <div>
+        <form onSubmit={this.submitForm}>
+          <input type="text" ref={(input) => { this.searchText = input; }} />
+          <button>Search</button>
+        </form>
+        <div id="resultsLimitContainer">
+          <button className={`${limit === '25' ? 'selected' : ''}`} onClick={this.resultLimit}>25</button>
+          <button className={`${limit === '50' ? 'selected' : ''}`} onClick={this.resultLimit}>50</button>
+          <button className={`${limit === '75' ? 'selected' : ''}`} onClick={this.resultLimit}>75</button>
+          <button className={`${limit === '100' ? 'selected' : ''}`} onClick={this.resultLimit}>100</button>
+        </div>
+      </div>
     );
   }
 }
